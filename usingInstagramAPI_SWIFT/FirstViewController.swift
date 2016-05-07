@@ -15,13 +15,9 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var IGFullName: UILabel!
     @IBOutlet weak var IGUsername: UILabel!
     
-    var appClientID: NSString = "YOUR CLIENT ID GOES HERE"
-    var appRedirectURL: NSString = "YOUR APP REDIRECT URL GOES HERE"
-    
     let defaultSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
     var dataTask: NSURLSessionDataTask?
-    
-    
+
     override func viewDidLoad() {
         
         super.viewDidLoad()

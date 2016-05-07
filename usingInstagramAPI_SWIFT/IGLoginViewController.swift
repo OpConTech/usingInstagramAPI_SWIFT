@@ -9,10 +9,12 @@
 import UIKit
 
 class IGLoginViewController: UIViewController, UIWebViewDelegate {
+
     
-    
-   // @IBOutlet weak var loginView: UIWebView!
     @IBOutlet weak var loginView: UIWebView!
+    
+    var appClientID: NSString = "YOUR CLIENT ID GOES HERE"
+    var appRedirectURL: NSString = "YOUR APP REDIRECT URL GOES HERE"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +25,10 @@ class IGLoginViewController: UIViewController, UIWebViewDelegate {
         
         //Manual Way...
         print("Going to Instaram API...")
-        let stringURL: String = String(format: "https://api.instagram.com/oauth/authorize/?client_id=118273d95c184f1c9acc7b157636a929&redirect_uri=https://localhost&response_type=token")
+        let stringURL: String = String(format: "https://api.instagram.com/oauth/authorize/?client_id=\(appClientID)&redirect_uri=\(appRedirectURL)&response_type=token")
+        print(stringURL)
         let authURL: NSURL = NSURL(string: stringURL)!
         self.loginView.loadRequest(NSURLRequest(URL: authURL))
-        //self.loginView.loadRequest(NSURLRequest(URL: authURL, cachePolicy: NSURLRequestUseProtocolCachePolicy, timeoutInterval: 10.0))
     }
 
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
@@ -53,9 +55,7 @@ class IGLoginViewController: UIViewController, UIWebViewDelegate {
         NSLog("code: %@", code)
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setValue(code, forKey: "IGToken")
-        //defaults.synchronize()
         NSUserDefaults.standardUserDefaults().synchronize()
-        
         
         // Now... the tricky part of retiring the Web View....
         

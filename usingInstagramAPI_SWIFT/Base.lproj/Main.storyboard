@@ -30,14 +30,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RS-sM-8sn">
-                                <rect key="frame" x="240" y="372" width="120" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RS-sM-8sn">
+                                <rect key="frame" x="226" y="372" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="eVl-VR-QJ8"/>
+                                    <constraint firstAttribute="width" constant="150" id="eVl-VR-QJ8"/>
                                     <constraint firstAttribute="height" constant="30" id="yso-PW-dZ5"/>
                                 </constraints>
-                                <state key="normal" title="Connect">
+                                <state key="normal" title="Connect App to IG">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -50,15 +50,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKy-zd-r9l">
-                                <rect key="frame" x="240" y="427" width="120" height="30"/>
+                                <rect key="frame" x="225" y="427" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5wT-dV-4Ld"/>
-                                    <constraint firstAttribute="width" constant="120" id="7EK-Uz-MKs"/>
+                                    <constraint firstAttribute="width" constant="150" id="7EK-Uz-MKs"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Y8p-4g-0ru"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="sam-yq-b38"/>
                                 </constraints>
-                                <state key="normal" title="Logout">
+                                <state key="normal" title="Disconnect">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -66,6 +66,12 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Y8p-4g-0ru"/>
+                                        <exclude reference="sam-yq-b38"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="logoutTapped:" destination="9pv-A4-QxB" eventType="touchDown" id="Q4y-8h-IRV"/>
                                 </connections>
